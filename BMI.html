@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .vam{
+            font-size: 0px;
+        }
+        .vam>*{
+            font-size: 16px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .vam::before{
+            content: "";
+            vertical-align: middle;
+            display: inline-block;
+            height: 100%;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        /* header */
+        header{
+            background-color: #424242;
+            width: 100%;
+            height: 300px;
+            margin: auto;
+            text-align: center;
+        }
+        .wrap{
+            height: 300px;
+            /* background: rgb(255, 92, 92); */
+            margin: auto;
+        }
+        .logo{
+            float: left;
+            margin-top: 92px;
+            margin-right: 97px;
+        }
+        .method{
+            float: left;
+            margin-top: 74px;
+        }
+        .method input{
+            border: #FFD366 2px solid;
+            border-radius: 10px;
+            margin-bottom: 23px;
+            height: 23px;
+        }
+        .method p{
+            margin-bottom: 4px;
+            font-size: 18px;
+            color: #FFD366;
+        }
+        .result{
+            background: #FFD366 ;
+            color: #424242;
+        }
+        .resultgreen{
+            border: 6px #86D73E solid;
+            color: #86D73F;
+        }
+        .resultblue{
+            border: 6px #31BAF9 solid;
+            color: #31BAF9;
+        }
+        .resultorange{
+            border: 6px #FF982D solid;
+            color: #FF982D;
+        }
+        .resultfat_1{
+            border: 6px #FF6C02 solid;
+            color: #FF6C02;
+        }
+        .resultfat_3{
+            border: 6px #FF1200 solid;
+            color: #FF1200;
+        }
+        [class*= result]{
+            float: left;
+            width: 120px;
+            height:120px;
+            border-radius: 50%;
+            margin-top: 92px;
+            margin-left: 53px;
+            font-size: 24px;
+            position: relative;
+        }
+        #BMI{
+            width: 100px;
+            height: 32px;
+            margin: auto;
+            margin-top: 43px;
+        }
+        .loop{
+            background: #86D73E;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #424242;
+            padding: 8px 8px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: none;
+        }
+        span{
+            font-size: 12px;
+            position: absolute;
+            bottom: 18px;
+            right: 0;
+            left: 0;
+            display: none;
+        }
+        .result:hover{
+            box-shadow: 0px 1px 6px #FFC431;
+        }
+        .result:active{
+            box-shadow: none;
+            background-color: #DEA921;
+        }
+        .effect{
+            float: left;
+            margin-top: 137px;
+            margin-left: 18px;
+        }
+        #effectId{
+            height: 32px;
+            font-size: 26px;
+        }
+        /* article */
+        article{
+            width: 100%;
+            padding-bottom: 200px;
+            background: rgba(235, 235, 235, 0.87);
+            color: #4A4A4A;
+        }
+        .title{
+            text-align: center;
+            padding-top: 48px;
+            margin-bottom: 28px;
+        }
+        .bar{
+            width: 624px;
+            height: 62px;
+            background: #FFF;
+            margin: auto;
+            margin-bottom: 16px;
+            line-height: 62px;
+        }
+        .bar a{
+            font-size: 20px;
+        }
+        .line{
+            width: 7px;
+            height: 62px;
+            float: left;
+        }
+        .menu_wrap{
+            list-style: none;
+        }
+        .datebar{
+            font-size: 12px;
+        }
+        #clear_all{
+            display: inline-block;
+            background-color: #FFC431;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        /* footer */
+        footer{
+            background: #FFD366;
+            width: 100%;
+            height: 90px;
+            line-height: 90px;
+            text-align: center;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="vam">
+        <div class=" wrap clearfix">
+            <div class="logo">
+                <img src="/img/BMICLogo.png" alt="">
+            </div>
+            <div class="method">
+                <p style="text-align: left;">身高 cm</p>
+                <input type="text" placeholder="請輸入身高" id="tallId">
+                <p style="text-align: left;">體重 kg</p>
+                <input type="text" placeholder="請輸入體重" id="weightId">
+            </div>
+            <div class="result" id="resultId">
+                <p id="BMI">看結果</p>
+                <span id="spanId">BMI</span>
+                <img class="loop" src="/img/icons_loop.png" alt="">
+            </div>
+            <div class="effect">
+                <div id="effectId">
+                </div>
+            </div>
+        </div>
+    </header>
+    <article class="clearfix">
+        <h2 class="title">BMI 紀錄</h2> 
+        <p style="text-align: center;">
+            <a id="clear_all" >CLEAR</a>
+        </p>           
+             <ul class="menu" style="list-style: none;">
+
+            </ul> 
+    </article>
+    <footer class="vam">
+        <img src="https://upload.cc/i1/2020/04/21/UaKMtN.png" alt="">
+    </footer>
+    <script src="/BMI.js"></script>
+</body>
+</html>
